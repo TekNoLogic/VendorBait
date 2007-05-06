@@ -16,7 +16,7 @@ f:SetScript("OnEvent", function()
 		local link, name, _, qty = GetQuestItemLink("choice", i), GetQuestItemInfo("choice", i)
 		local price = GetSellValue(link)
 		if not price then unk = true
-		elseif price > bestp then bestp, besti = price, i end
+		elseif (price * qty) > bestp then bestp, besti = (price * qty), i end
 	end
 
 	if not unk and besti then
