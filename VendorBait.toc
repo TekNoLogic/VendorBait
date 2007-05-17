@@ -8,7 +8,7 @@
 ## X-Email: tekkub-wow@googlegroups.com
 ## X-Category: Quest
 
-## RequiredDeps: SellFish
+## OptionalDeps: SellFish, ItemPrice-1.0, Informant
 
 VendorBait.lua
 
