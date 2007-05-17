@@ -1,5 +1,5 @@
 
-local _G = getfevn(0)
+local _G = getfenv(0)
 local model = CreateFrame("Model", nil, QuestRewardScrollFrame)
 model:SetModel"Interface\\Buttons\\UI-AutoCastButton.mdx"
 model:SetSequence(0)
