@@ -1,4 +1,4 @@
-## Interface: 21000
+## Interface: 20100
 
 ## Title: VendorBait
 ## Notes: Highlight the best quest reward choice for selling to vendor
