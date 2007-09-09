@@ -10,6 +10,10 @@
 
 ## OptionalDeps: SellFish, ItemPrice-1.0, Informant, ItemDataCache
 
+## LoadManagers: AddonLoader
+## X-LoadOn-Events: QUEST_COMPLETE
+## X-LoadOn-QUEST_COMPLETE: LoadAddOn('VendorBait')
+
 VendorBait.lua
 
 
