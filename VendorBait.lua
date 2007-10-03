@@ -14,15 +14,15 @@ f:SetScript("OnEvent", function()
 	if not _G.GetSellValue then return end
 
 	model:Hide()
-	local bestp, besti, unk = 0
+	local bestp, besti = 0
 	for i=1,GetNumQuestChoices() do
 		local link, name, _, qty = GetQuestItemLink("choice", i), GetQuestItemInfo("choice", i)
-		local price = _G.GetSellValue(link)
-		if not price then unk = true
+		local price = link and _G.GetSellValue(link)
+		if not price then return
 		elseif price > bestp then bestp, besti = price, i end
 	end
 
-	if not unk and besti then
+	if besti then
 		model:ClearAllPoints()
 		model:SetAllPoints("QuestRewardItem"..besti.."IconTexture")
 		model:Show()
