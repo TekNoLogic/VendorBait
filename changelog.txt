@@ -1,0 +1,3 @@
+3.0.1.1-Beta
+    Rework to use the gem setting sparkles, since the autocast model thing is gone in Wrath
+    Fix for border appearing outside the quest turnin window
