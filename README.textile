@@ -1,9 +1,0 @@
-VendorBait is a small addon I wrote to complement Tuller's "SellFish":http://www.wowinterface.com/downloads/info7035-SellFish.html addon.  When turning in a quest which gives a "select your reward" section, the items' sell values are pulled from SellFish and the item with the highest value is highlighted.
-
-VendorBait does not provide price data, for that you will need "SellFish":http://www.wowinterface.com/downloads/info7035-SellFish.html or an addon that implements the "GetSellValue API":http://www.wowwiki.com/API_GetSellValue
-
-h2. Links
-
-<b>Visit "my site":http://www.tekkub.net/addons/VendorBait for more info.<br>
-Please report all bugs and feature requests to my "Google Code":http://code.google.com/p/tekkub-wow/issues/list?can=1&q=addon:VendorBait&sort=status+milestone&colspec=ID%20Type%20Status%20Addon%20Milestone%20Summary tracker<br>
-Please direct all feedback and questions to my "Google Groups":http://groups-beta.google.com/group/tekkub-wow mailinglist.</b>
