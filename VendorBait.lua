@@ -38,7 +38,7 @@ f:SetScript("OnEvent", function(self)
 		local link, name, _, qty = GetQuestItemLink("choice", i), GetQuestItemInfo("choice", i)
 		local price = link and _G.GetSellValue(link)
 		if not price then return
-		elseif price > bestp then bestp, besti = price, i end
+		elseif (price * (qty or 1)) > bestp then bestp, besti = (price * (qty or 1)), i end
 	end
 
 	if besti then
