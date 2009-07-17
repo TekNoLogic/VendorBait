@@ -1,5 +1,5 @@
 
-local f = LibStub("tekShiner").new(QuestRewardItem1)
+local f = LibStub("tekShiner").new(QuestRewardScrollChildFrame)
 f:Hide()
 
 
