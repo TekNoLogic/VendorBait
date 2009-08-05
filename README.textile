@@ -1,6 +1,6 @@
-VendorBait is a small addon I wrote to complement Tuller's "SellFish":http://www.wowinterface.com/downloads/info7035-SellFish.html addon.  When turning in a quest which gives a "select your reward" section, the items' sell values are pulled from SellFish and the item with the highest value is highlighted.
+VendorBait is a small addon I wrote to complement Tuller's "SellFish":http://www.wowinterface.com/downloads/info7035-SellFish.html addon.  When turning in a quest which gives a "select your reward" section, the item with the highest value is highlighted.
 
-VendorBait does not provide price data, for that you will need "SellFish":http://www.wowinterface.com/downloads/info7035-SellFish.html or an addon that implements the "GetSellValue API":http://www.wowwiki.com/API_GetSellValue
+As of patch 3.2 the WoW API provides vendor prices, so you no longer need an addon like SellFish to provide prices.
 
 h2. Links
 

@@ -8,8 +8,6 @@
 ## X-Email: tekkub-wow@googlegroups.com
 ## X-Category: Quest
 
-## OptionalDeps: SellFish, ItemPrice-1.0, Informant, ItemDataCache, Valuation
-
 ## LoadManagers: AddonLoader
 ## X-LoadOn-Events: QUEST_COMPLETE
 ## X-LoadOn-QUEST_COMPLETE: LoadAddOn('VendorBait')
