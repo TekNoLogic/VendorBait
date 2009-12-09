@@ -1,5 +1,4 @@
 
-local prefix = (select(4, GetBuildInfo()) < 30300) and "QuestRewardItem" or "QuestInfoItem"
 local f = LibStub("tekShiner").new(QuestRewardScrollChildFrame)
 f:Hide()
 
@@ -17,10 +16,10 @@ f:SetScript("OnEvent", function(self)
 
 	if besti then
 		self:ClearAllPoints()
-		self:SetAllPoints(prefix..besti.."IconTexture")
+		self:SetAllPoints("QuestInfoItem"..besti.."IconTexture")
 		self:Show()
 	end
 end)
 
 
-if _G[prefix.."1"]:IsVisible() then f:GetScript("OnEvent")(f) end
+if QuestInfoItem1:IsVisible() then f:GetScript("OnEvent")(f) end
