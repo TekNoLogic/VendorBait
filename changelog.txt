@@ -1,3 +1,6 @@
+3.3.0.5-Release
+    Make work with 3.3
+
 3.2.0.4-Release
     Use new API for prices, yatta! No more OptDeps!
 
