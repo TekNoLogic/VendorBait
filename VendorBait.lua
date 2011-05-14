@@ -1,14 +1,26 @@
 
+local timeout = CreateFrame("Frame")
+timeout:Hide()
+
 local f = LibStub("tekShiner").new(QuestRewardScrollChildFrame)
 f:Hide()
 
 
 f:RegisterEvent("QUEST_COMPLETE")
-f:SetScript("OnEvent", function(self)
+f:RegisterEvent("QUEST_ITEM_UPDATE")
+f:RegisterEvent("GET_ITEM_INFO_RECEIVED")
+f:SetScript("OnEvent", function(self, ...)
+	print("vendorbait", ...)
 	self:Hide()
 	local bestp, besti = 0
 	for i=1,GetNumQuestChoices() do
 		local link, name, _, qty = GetQuestItemLink("choice", i), GetQuestItemInfo("choice", i)
+		if not link then
+			print("No link!")
+			-- timeout:Show()
+			return
+		end
+		if link and not GetItemInfo(link) then print("Can't find item in GII!", i, link) end
 		local price = link and select(11, GetItemInfo(link))
 		if not price then return
 		elseif (price * (qty or 1)) > bestp then bestp, besti = (price * (qty or 1)), i end
@@ -21,5 +33,14 @@ f:SetScript("OnEvent", function(self)
 	end
 end)
 
+
+local elapsed
+timeout:SetScript("OnShow", function() elapsed = 0 end)
+timeout:SetScript("OnHide", function() f:GetScript("OnEvent")(f) end)
+timeout:SetScript("OnUpdate", function(self, elap)
+	elapsed = elapsed + elap
+	if elapsed < 1 then return end
+	self:Hide()
+end)
 
 if QuestInfoItem1:IsVisible() then f:GetScript("OnEvent")(f) end
