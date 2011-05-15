@@ -1,3 +1,6 @@
+4.1.0.7-Beta
+    You didn't see that
+
 4.1.0.6-Beta
     Fix for quest item data not loaded after login
 
