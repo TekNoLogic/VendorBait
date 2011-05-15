@@ -3,7 +3,7 @@
 ## Title: VendorBait
 ## Notes: Highlight the best quest reward choice for selling to vendor
 ## Author: Tekkub Stoutwrithe
-## Version: Alpha
+## Version: 4.1.0.7
 ## X-Website: http://code.google.com/p/tekkub-wow/
 ## X-Email: tekkub-wow@googlegroups.com
 ## X-Category: Quest
