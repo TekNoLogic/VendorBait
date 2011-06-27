@@ -1,4 +1,4 @@
-## Interface: 40100
+## Interface: 40200
 
 ## Title: VendorBait
 ## Notes: Highlight the best quest reward choice for selling to vendor
