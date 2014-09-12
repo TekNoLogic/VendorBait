@@ -16,10 +16,10 @@ f:SetScript("OnEvent", function(self)
 
 	if besti then
 		self:ClearAllPoints()
-		self:SetAllPoints("QuestInfoItem"..besti.."IconTexture")
+		self:SetAllPoints("QuestInfoRewardsFrameQuestInfoItem"..besti.."IconTexture")
 		self:Show()
 	end
 end)
 
 
-if QuestInfoItem1:IsVisible() then f:GetScript("OnEvent")(f) end
+if QuestFrameRewardPanel:IsVisible() then f:GetScript("OnEvent")(f) end
