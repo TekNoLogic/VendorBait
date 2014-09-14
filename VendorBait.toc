@@ -4,9 +4,6 @@
 ## Notes: Highlight the best quest reward choice for selling to vendor
 ## Author: Tekkub Stoutwrithe
 ## Version: Alpha
-## X-Website: http://code.google.com/p/tekkub-wow/
-## X-Email: tekkub-wow@googlegroups.com
-## X-Category: Quest
 
 ## LoadManagers: AddonLoader
 ## X-LoadOn-Events: QUEST_COMPLETE
