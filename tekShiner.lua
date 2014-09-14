@@ -1,33 +1,12 @@
 
-local lib = LibStub:NewLibrary("tekShiner", 1)
-if not lib then return end
+local myname, ns = ...
 
 
 local R, G, B = .95, .95, .32
 local SPEEDS, TIMERS, SHINES, SPACING = {2, 4, 6, 8}, {0, 0, 0, 0}, {}, 6
 
 
-function lib.new(parent, r, g, b)
-	local f = CreateFrame("Frame", nil, parent or UIParent)
-	f.sparkles, f.timers = {}, {0, 0, 0, 0}
-
-	for i=1,16 do
-		local tex = f:CreateTexture(nil, "BACKGROUND")
-		tex:SetTexture([[Interface\ItemSocketingFrame\UI-ItemSockets]])
-		tex:SetTexCoord(0.3984375, 0.4453125, 0.40234375, 0.44921875)
-		tex:SetBlendMode("ADD")
-		tex:SetWidth(13) tex:SetHeight(13)
-		tex:SetVertexColor(r or R, g or G, b or B)
-		f.sparkles[i] = tex
-	end
-
-	f:SetScript("OnUpdate", lib.OnUpdate)
-
-	return f
-end
-
-
-function lib:OnUpdate(elapsed)
+local function OnUpdate(self, elapsed)
 	for i,timer in pairs(self.timers) do
 		self.timers[i] = timer + elapsed
 		if self.timers[i] > SPEEDS[i]*4 then self.timers[i] = 0 end
@@ -67,3 +46,21 @@ function lib:OnUpdate(elapsed)
 end
 
 
+function ns.newShiner(parent, r, g, b)
+	local f = CreateFrame("Frame", nil, parent or UIParent)
+	f.sparkles, f.timers = {}, {0, 0, 0, 0}
+
+	for i=1,16 do
+		local tex = f:CreateTexture(nil, "BACKGROUND")
+		tex:SetTexture([[Interface\ItemSocketingFrame\UI-ItemSockets]])
+		tex:SetTexCoord(0.3984375, 0.4453125, 0.40234375, 0.44921875)
+		tex:SetBlendMode("ADD")
+		tex:SetWidth(13) tex:SetHeight(13)
+		tex:SetVertexColor(r or R, g or G, b or B)
+		f.sparkles[i] = tex
+	end
+
+	f:SetScript("OnUpdate", OnUpdate)
+
+	return f
+end

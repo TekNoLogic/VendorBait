@@ -1,7 +1,7 @@
 
 local myname, ns = ...
 
-local f = LibStub("tekShiner").new(QuestRewardScrollChildFrame)
+local f = ns.newShiner(QuestRewardScrollChildFrame)
 f:Hide()
 
 

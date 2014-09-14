@@ -13,6 +13,5 @@ externals\events.lua
 externals\timer.lua
 externals\wod.lua
 
-LibStub.lua
 tekShiner.lua
 VendorBait.lua
