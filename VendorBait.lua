@@ -9,12 +9,16 @@ local function update()
 	f:Hide()
 	local bestp, besti = 0
 	for i=1,GetNumQuestChoices() do
-		local link, name, _, qty = GetQuestItemLink("choice", i), GetQuestItemInfo("choice", i)
+		local name, _, qty = GetQuestItemInfo("choice", i)
+		local link = GetQuestItemLink("choice", i)
 		if not link then return ns.StartTimer(GetTime() + 1, update) end
 
 		local price = link and select(11, GetItemInfo(link))
 		if not price then return
-		elseif (price * (qty or 1)) > bestp then bestp, besti = (price * (qty or 1)), i end
+		elseif (price * (qty or 1)) > bestp then
+			bestp = price * (qty or 1)
+			besti = i
+		end
 	end
 
 	if besti then
