@@ -1,4 +1,6 @@
 
+local myname, ns = ...
+
 local timeout = CreateFrame("Frame")
 timeout:Hide()
 
@@ -24,8 +26,10 @@ f:SetScript("OnEvent", function(self, ...)
 	end
 
 	if besti then
+		local framename = "QuestInfoItem"
+		if ns.isWOD then framename = "QuestInfoRewardsFrameQuestInfoItem" end
 		self:ClearAllPoints()
-		self:SetAllPoints("QuestInfoRewardsFrameQuestInfoItem"..besti.."IconTexture")
+		self:SetAllPoints(framename..besti.."IconTexture")
 		self:Show()
 	end
 end)
@@ -40,4 +44,8 @@ timeout:SetScript("OnUpdate", function(self, elap)
 	self:Hide()
 end)
 
-if QuestFrameRewardPanel:IsVisible() then f:GetScript("OnEvent")(f) end
+if ns.isWOD then
+	if QuestFrameRewardPanel:IsVisible() then f:GetScript("OnEvent")(f) end
+else
+	if QuestInfoItem1:IsVisible() then f:GetScript("OnEvent")(f) end
+end

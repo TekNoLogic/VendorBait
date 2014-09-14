@@ -12,6 +12,8 @@
 ## X-LoadOn-Events: QUEST_COMPLETE
 ## X-LoadOn-QUEST_COMPLETE: LoadAddOn('VendorBait')
 
+externals\wod.lua
+
 LibStub.lua
 tekShiner.lua
 VendorBait.lua
