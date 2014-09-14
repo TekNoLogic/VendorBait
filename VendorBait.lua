@@ -5,16 +5,12 @@ local f = LibStub("tekShiner").new(QuestRewardScrollChildFrame)
 f:Hide()
 
 
-local function retry() f:GetScript("OnEvent")(f) end
-f:RegisterEvent("QUEST_COMPLETE")
-f:RegisterEvent("QUEST_ITEM_UPDATE")
-f:RegisterEvent("GET_ITEM_INFO_RECEIVED")
-f:SetScript("OnEvent", function(self, ...)
-	self:Hide()
+local function update()
+	f:Hide()
 	local bestp, besti = 0
 	for i=1,GetNumQuestChoices() do
 		local link, name, _, qty = GetQuestItemLink("choice", i), GetQuestItemInfo("choice", i)
-		if not link then return ns.StartTimer(GetTime() + 1, retry) end
+		if not link then return ns.StartTimer(GetTime() + 1, update) end
 
 		local price = link and select(11, GetItemInfo(link))
 		if not price then return
@@ -24,12 +20,15 @@ f:SetScript("OnEvent", function(self, ...)
 	if besti then
 		local framename = "QuestInfoItem"
 		if ns.isWOD then framename = "QuestInfoRewardsFrameQuestInfoItem" end
-		self:ClearAllPoints()
-		self:SetAllPoints(framename..besti.."IconTexture")
-		self:Show()
+		f:ClearAllPoints()
+		f:SetAllPoints(framename..besti.."IconTexture")
+		f:Show()
 	end
 end)
+ns.RegisterEvent("QUEST_COMPLETE", update)
+ns.RegisterEvent("QUEST_ITEM_UPDATE", update)
+ns.RegisterEvent("GET_ITEM_INFO_RECEIVED", update)
 
 
-if ns.isWOD and QuestFrameRewardPanel:IsVisible() then retry() end
-if not ns.isWOD and QuestInfoItem1:IsVisible() then retry() end
+if ns.isWOD and QuestFrameRewardPanel:IsVisible() then update() end
+if not ns.isWOD and QuestInfoItem1:IsVisible() then update() end

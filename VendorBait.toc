@@ -9,6 +9,7 @@
 ## X-LoadOn-Events: QUEST_COMPLETE
 ## X-LoadOn-QUEST_COMPLETE: LoadAddOn('VendorBait')
 
+externals\events.lua
 externals\timer.lua
 externals\wod.lua
 
