@@ -28,7 +28,7 @@ local function update()
 		f:SetAllPoints(framename..besti.."IconTexture")
 		f:Show()
 	end
-end)
+end
 ns.RegisterEvent("QUEST_COMPLETE", update)
 ns.RegisterEvent("QUEST_ITEM_UPDATE", update)
 ns.RegisterEvent("GET_ITEM_INFO_RECEIVED", update)
