@@ -3,7 +3,7 @@
 ## Title: VendorBait
 ## Notes: Highlight the best quest reward choice for selling to vendor
 ## Author: Tekkub Stoutwrithe
-## Version: Alpha
+## Version: 6.0.0.9
 
 ## LoadManagers: AddonLoader
 ## X-LoadOn-Events: QUEST_COMPLETE
