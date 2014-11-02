@@ -22,10 +22,9 @@ local function update()
 	end
 
 	if besti then
-		local framename = "QuestInfoItem"
-		if ns.isWOD then framename = "QuestInfoRewardsFrameQuestInfoItem" end
+		local qif = QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, besti)
 		f:ClearAllPoints()
-		f:SetAllPoints(framename..besti.."IconTexture")
+		f:SetAllPoints(qif.Icon)
 		f:Show()
 	end
 end
@@ -34,5 +33,4 @@ ns.RegisterEvent("QUEST_ITEM_UPDATE", update)
 ns.RegisterEvent("GET_ITEM_INFO_RECEIVED", update)
 
 
-if ns.isWOD and QuestFrameRewardPanel:IsVisible() then update() end
-if not ns.isWOD and QuestInfoItem1:IsVisible() then update() end
+if QuestFrameRewardPanel:IsVisible() then update() end
