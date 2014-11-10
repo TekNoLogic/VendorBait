@@ -1,3 +1,6 @@
+6.0.0.10-Beta
+    Fix for race condition with frame creation
+
 6.0.0.9-Beta
     Fix quest frame names for 6.0
 
